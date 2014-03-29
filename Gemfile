@@ -34,6 +34,7 @@ end
 
 #list of gems
 gem 'image_core', :path => '../image_core'
+gem 'article', :path => '../article'
 gem 'login', :path => '../login'
 
 # Use ActiveModel has_secure_password

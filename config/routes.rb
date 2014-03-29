@@ -1,5 +1,8 @@
 MainApp::Application.routes.draw do
+  resources :authors
+
   resources :image 
+  resources :article
   match "/image/create" => "image#create", via: [:get, :post]
   mount ImageCore::Engine, :at => '/image_core'
   # The priority is based upon order of creation: first created -> highest priority.

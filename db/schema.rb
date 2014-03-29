@@ -11,7 +11,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130113150743) do
+ActiveRecord::Schema.define(version: 20140323095202) do
+
+  create_table "article_authors", force: true do |t|
+    t.integer  "article_id"
+    t.integer  "author_id"
+    t.integer  "sequence_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "articles", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "authors", force: true do |t|
+    t.string   "name"
+    t.text     "address"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "base_article_authors", force: true do |t|
+    t.integer  "base_article_id"
+    t.integer  "author_id"
+    t.integer  "sequence_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "base_articles", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "base_images", force: true do |t|
+    t.string   "name"
+    t.integer  "entity_id"
+    t.string   "entity_type"
+    t.string   "caption"
+    t.text     "description"
+    t.string   "image_path"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "image_properties", force: true do |t|
     t.integer  "image_id"
@@ -30,6 +81,14 @@ ActiveRecord::Schema.define(version: 20130113150743) do
     t.string   "caption"
     t.text     "description"
     t.string   "image_path"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

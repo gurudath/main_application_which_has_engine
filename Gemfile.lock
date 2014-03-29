@@ -1,4 +1,10 @@
 PATH
+  remote: ../article
+  specs:
+    article (0.0.1)
+      rails (~> 4.0.3)
+
+PATH
   remote: ../image_core
   specs:
     image_core (0.0.1)
@@ -131,6 +137,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  article!
   coffee-rails (~> 4.0.0)
   debugger
   image_core!
